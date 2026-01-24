@@ -1,23 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Truth or Dare Test</title>
-  <style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Truth or Dare For My Fans</title>
+<style>
     body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      margin: 50px;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background-color: #fff0f0;
+        display: flex;
+        justify-content: space-between;
     }
-    h1 { color: #d00; }
-    p { font-size: 18px; }
-  </style>
+    .left-column, .right-column {
+        display: flex;
+        flex-direction: column;
+    }
+    .left-column {
+        width: 45%;
+        gap: 20px;
+    }
+    .right-column {
+        width: 45%;
+        gap: 20px;
+        align-items: center;
+    }
+    h1 {
+        font-size: 36px;
+        margin-bottom: 20px;
+        background-color: #f44336;
+        color: white;
+        padding: 10px;
+        text-align: center;
+    }
+    .button-row {
+        display: flex;
+        gap: 20px;
+    }
+    button {
+        flex: 1;
+        padding: 20px;
+        font-size: 18px;
+        border: none;
+        cursor: pointer;
+        border-radius: 8px;
+        color: white;
+    }
+    .truth-btn {
+        background-color: #2196F3;
+    }
+    .dare-btn {
+        background-color: #f44336;
+    }
+    input, .stripe-box, .creator-box, .refund-box, .demo-video {
+        padding: 15px;
+        font-size: 18px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .stripe-box, .creator-box, .refund-box {
+        background-color: #eee;
+        text-align: center;
+    }
+    .demo-video {
+        text-align: center;
+        position: relative;
+        margin-top: 40px; /* increased spacing below hero image */
+    }
+    .demo-video img {
+        width: 100%;
+        border-radius: 8px;
+    }
+    .demo-video span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 24px;
+        font-weight: bold;
+        color: white;
+        background-color: rgba(0,0,0,0.6);
+        padding: 10px 20px;
+        border-radius: 8px;
+    }
+    .footer {
+        font-size: 14px;
+        margin-top: 20px;
+    }
+</style>
 </head>
 <body>
+    <div class="left-column">
+        <h1>Truth Or Dare</h1>
+        <div class="button-row">
+            <button class="truth-btn">Truth — $5.00</button>
+            <button class="dare-btn">Dare — $25.00</button>
+        </div>
+        <input type="text" placeholder="Enter Creator's Name">
+        <input type="text" placeholder="Enter Fan's Name">
+        <div class="stripe-box">Pay with Stripe</div>
+        <div class="creator-box">Creator Accept or Refuse Challenge</div>
+        <div class="refund-box">Refund if Creator Refuses Challenge</div>
+        <div class="footer">You must be 18 years or older to enter.<br>Coming soon: Featured Creators directly on our site!</div>
+    </div>
 
-  <h1>Truth or Dare Test Page</h1>
-  <p>If you see this, Render is serving the latest HTML correctly.</p>
-
+    <div class="right-column">
+        <img src="/mnt/data/A_photograph_features_a_young_woman_with_long,_wav.png" alt="Hero Image">
+        <div class="demo-video">
+            <img src="/mnt/data/A_photograph_features_a_young_woman_with_long,_wav.png" alt="Demo Video Placeholder">
+            <span>Watch Demo Video Now</span>
+        </div>
+    </div>
 </body>
 </html>
