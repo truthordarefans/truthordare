@@ -2,120 +2,22 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Truth or Dare For My Fans</title>
+<title>Truth Or Dare For My Fans</title>
 <style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 20px;
-        background-color: #fff0f0;
-        display: flex;
-        justify-content: space-between;
-    }
-    .left-column, .right-column {
-        display: flex;
-        flex-direction: column;
-    }
-    .left-column {
-        width: 45%;
-        gap: 20px;
-    }
-    .right-column {
-        width: 45%;
-        gap: 20px;
-        align-items: center;
-    }
-    h1 {
-        font-size: 36px;
-        margin-bottom: 20px;
-        background-color: #f44336;
-        color: white;
-        padding: 10px;
-        text-align: center;
-    }
-    .button-row {
-        display: flex;
-        gap: 20px;
-    }
-    button {
-        flex: 1;
-        padding: 20px;
-        font-size: 18px;
-        border: none;
-        cursor: pointer;
-        border-radius: 8px;
-        color: white;
-    }
-    .truth-btn {
-        background-color: #2196F3;
-    }
-    .dare-btn {
-        background-color: #f44336;
-    }
-    input, .stripe-box, .creator-box, .refund-box, .demo-video {
-        padding: 15px;
-        font-size: 18px;
-        border-radius: 8px;
-        border: 1px solid #ccc;
-        width: 100%;
-        box-sizing: border-box;
-    }
-    .stripe-box, .creator-box, .refund-box {
-        background-color: #eee;
-        text-align: center;
-    }
-    .demo-video {
-        text-align: center;
-        position: relative;
-        margin-top: 40px;
-    }
-    .demo-video img {
-        width: 100%;
-        border-radius: 8px;
-    }
-    .demo-video span {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 24px;
-        font-weight: bold;
-        color: white;
-        background-color: rgba(0,0,0,0.6);
-        padding: 10px 20px;
-        border-radius: 8px;
-    }
-    .footer {
-        font-size: 14px;
-        margin-top: 20px;
-    }
-</style>
-</head>
-<body>
-    <div class="left-column">
-        <h1>Truth Or Dare</h1>
-        <div class="button-row">
-            <button class="truth-btn">Truth — $5.00</button>
-            <button class="dare-btn">Dare — $25.00</button>
-        </div>
-        <input type="text" placeholder="Enter Creator's Name">
-        <input type="text" placeholder="Enter Fan's Name">
-        <div class="stripe-box">Pay with Stripe</div>
-        <div class="creator-box">Creator Accept or Refuse Challenge</div>
-        <div class="refund-box">Refund if Creator Refuses Challenge</div>
-        <div class="footer">You must be 18 years or older to enter.<br>Coming soon: Featured Creators directly on our site!</div>
-    </div>
+body {
+  font-family: Arial, sans-serif;
+  background: #f6f6f6;
+  margin: 0;
+  padding: 40px;
+}
 
-    <div class="right-column">
-        <!-- Hero image (in bed) -->
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAYAAABl8LhN..." alt="Hero Image">
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  max-width: 1200px;
+  margin: auto;
+}
 
-        <!-- Demo video box (loft) -->
-        <div class="demo-video">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAYAAABl8LhN..." alt="Demo Video Placeholder">
-            <span>Watch Demo Video Now</span>
-        </div>
-    </div>
-</body>
-</html>
+/* LEFT COLUMN */
+.left
