@@ -2,22 +2,129 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Truth Or Dare For My Fans</title>
 <style>
 body {
-  font-family: Arial, sans-serif;
-  background: #f6f6f6;
-  margin: 0;
-  padding: 40px;
+    font-family: Arial, sans-serif;
+    background-color: #f6f6f6;
+    margin: 0;
+    padding: 40px;
 }
 
 .container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  max-width: 1200px;
-  margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 1200px;
+    margin: auto;
 }
 
-/* LEFT COLUMN */
-.left
+.left-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.right-column img {
+    width: 100%;
+    border-radius: 12px;
+}
+
+.demo-video {
+    position: relative;
+    width: 100%;
+}
+.demo-video span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    background-color: rgba(0,0,0,0.6);
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+
+.box, .chat-box, .video-box {
+    background-color: #eee;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.challenge-row {
+    display: flex;
+    gap: 20px;
+}
+.challenge-row .truth-btn, .challenge-row .dare-btn {
+    flex: 1;
+    padding: 20px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    color: white;
+}
+.truth-btn { background-color: #2196F3; }
+.dare-btn { background-color: #f44336; }
+
+.footer {
+    font-size: 14px;
+    margin-top: 20px;
+    text-align: center;
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+    <!-- LEFT COLUMN -->
+    <div class="left-column">
+        <h1>Truth Or Dare</h1>
+        <div class="challenge-row">
+            <div class="truth-btn box">Truth $5.00</div>
+            <div class="dare-btn box">Live Video Stream $25.00</div>
+        </div>
+
+        <div class="chat-box">Private 2-Way Truth Conversation</div>
+        <div class="video-box">Private 1-Way Dare Video Stream + 2-Way Chat</div>
+
+        <input type="text" placeholder="Enter Creator Name" class="box">
+        <input type="text" placeholder="Enter Fan Name (or Nickname)" class="box">
+
+        <div class="box">Pay with Stripe</div>
+        <div class="box">Creator Accept or Refuse Challenge</div>
+        <div class="box">Refund if Creator Refuses Challenge</div>
+
+        <div class="footer">
+            You must be 18 years or older to enter.<br>
+            Coming Soon: Featured Creators directly on our site!
+        </div>
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="right-column">
+        <!-- Hero image -->
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAaAAAAHgCAYAAABb0sH5AAAAAklEQVR4AewaftIAAABCSURBVO3BQY4AAAAwEMC+8y9bkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4G0gAAWgUAHsAAAAASUVORK5CYII=" alt="Hero Image">
+
+        <!-- Demo video box -->
+        <div class="demo-video">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAaAAAAHgCAYAAABb0sH5AAAAAklEQVR4AewaftIAAABCSURBVO3BQY4AAAAwEMC+8y9bkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4G0gAAWgUAHsAAAAASUVORK5CYII=" alt="Demo Video Image">
+            <span>Click here to watch short demo video</span>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
