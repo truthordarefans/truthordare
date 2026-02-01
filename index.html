@@ -4,95 +4,71 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Truth or Dare</title>
-
   <style>
     body {
+      font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      font-family: Arial, sans-serif;
       background: #ffffff;
-      text-align: center;
     }
 
-    header {
-      background: #000000;
+    .hero {
+      position: relative;
+      width: 100%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .hero img {
+      width: 100%;
+      display: block;
+    }
+
+    .hero-text {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      background: rgba(0, 0, 0, 0.6);
       color: #ffffff;
-      padding: 30px 15px;
-      font-size: 26px;
+      padding: 15px;
+      font-size: 20px;
+      max-width: 80%;
+      line-height: 1.3;
     }
 
-    main {
-      max-width: 700px;
-      margin: 40px auto;
-      padding: 25px;
+    .content {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 20px;
+      text-align: center;
       border: 1px solid #cccccc;
       background: #f9f9f9;
     }
 
-    .box {
-      margin: 20px 0;
-      padding: 20px;
-      font-size: 20px;
-      border-radius: 8px;
-      color: #ffffff;
-    }
-
-    .truth {
-      background: #1976d2;
-    }
-
-    .dare {
-      background: #d32f2f;
-    }
-
     button {
-      margin-top: 15px;
-      padding: 12px 30px;
+      margin: 10px;
+      padding: 12px 20px;
       font-size: 16px;
       cursor: pointer;
     }
-
-    footer {
-      margin: 40px 0;
-      font-size: 14px;
-      color: #777777;
-    }
   </style>
 </head>
-
 <body>
 
-  <header>
-    Truth or Dare – Fan Challenge
-  </header>
-
-  <main>
-    <p><strong>Select an option:</strong></p>
-
-    <div class="box truth">
-      TRUTH – $5
-      <br>
-      5 minutes live interaction
-      <br>
-      <button>Choose Truth</button>
+  <div class="hero">
+    <img src="https://i.imgur.com/UIp4i8R.jpeg" alt="Creator image">
+    <div class="hero-text">
+      Go live via video stream by purchasing dare
     </div>
+  </div>
 
-    <div class="box dare">
-      DARE – $25
-      <br>
-      15 minutes live interaction
-      <br>
-      <button>Choose Dare</button>
-    </div>
-
-    <p>
-      Live access unlocks after payment.
-    </p>
-  </main>
-
-  <footer>
-    Demo page – media will be added later
-  </footer>
+  <div class="content">
+    <p><strong>Truth or Dare challenge</strong></p>
+    <p>Only visible to the fan who paid.</p>
+    <button>Accept</button>
+    <button>Refuse</button>
+  </div>
 
 </body>
 </html>
+
