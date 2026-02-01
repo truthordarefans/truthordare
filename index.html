@@ -1,130 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Truth Or Dare For My Fans</title>
-<style>
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f6f6f6;
-    margin: 0;
-    padding: 40px;
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video App Mockup</title>
+  <style>
+    /* ========================= */
+    /* Global styling           */
+    /* ========================= */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+    }
 
-.container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    max-width: 1200px;
-    margin: auto;
-}
+    .app-container {
+      display: grid;
+      grid-template-columns: 250px 1fr;
+      gap: 20px;
+      padding: 20px;
+      min-height: 100vh;
+      box-sizing: border-box;
+      transition: all 0.3s ease;
+    }
 
-.left-column {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
+    /* ========================= */
+    /* Sidebar styling           */
+    /* ========================= */
+    .sidebar {
+      background: #f0f0f0;
+      padding: 20px;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15), 0 0 15px rgba(0,123,255,0.2);
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
 
-.right-column {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    align-items: center;
-}
+    .sidebar:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.2), 0 0 25px rgba(0,123,255,0.25);
+    }
 
-.right-column img {
-    width: 100%;
-    border-radius: 12px;
-}
+    /* ========================= */
+    /* Main content              */
+    /* ========================= */
+    .main-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
 
-.demo-video {
-    position: relative;
-    width: 100%;
-}
-.demo-video span {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 24px;
-    font-weight: bold;
-    color: white;
-    background-color: rgba(0,0,0,0.6);
-    padding: 10px 20px;
-    border-radius: 8px;
-}
+    /* Video box styling */
+    .video-box {
+      width: 100%;
+      max-width: 600px;
+      aspect-ratio: 1 / 1;
+      background: #000;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3), 0 0 15px rgba(0,123,255,0.4);
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative;
+    }
 
-.box, .chat-box, .video-box {
-    background-color: #eee;
-    padding: 15px;
-    border-radius: 8px;
-    font-size: 18px;
-    text-align: center;
-}
+    .video-box:hover {
+      transform: scale(1.03);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.35), 0 0 25px rgba(0,123,255,0.6);
+    }
 
-.challenge-row {
-    display: flex;
-    gap: 20px;
-}
-.challenge-row .truth-btn, .challenge-row .dare-btn {
-    flex: 1;
-    padding: 20px;
-    font-size: 18px;
-    border: none;
-    cursor: pointer;
-    border-radius: 8px;
-    color: white;
-}
-.truth-btn { background-color: #2196F3; }
-.dare-btn { background-color: #f44336; }
+    .video-box::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 16px;
+      box-shadow: inset 0 0 15px rgba(255,255,255,0.05);
+      pointer-events: none;
+    }
 
-.footer {
-    font-size: 14px;
-    margin-top: 20px;
-    text-align: center;
-}
-</style>
-</head>
-<body>
-<div class="container">
-
-    <!-- LEFT COLUMN -->
-    <div class="left-column">
-        <h1>Truth Or Dare</h1>
-        <div class="challenge-row">
-            <div class="truth-btn box">Truth $5.00</div>
-            <div class="dare-btn box">Live Video Stream $25.00</div>
-        </div>
-
-        <div class="chat-box">Private 2-Way Truth Conversation</div>
-        <div class="video-box">Private 1-Way Dare Video Stream + 2-Way Chat</div>
-
-        <input type="text" placeholder="Enter Creator Name" class="box">
-        <input type="text" placeholder="Enter Fan Name (or Nickname)" class="box">
-
-        <div class="box">Pay with Stripe</div>
-        <div class="box">Creator Accept or Refuse Challenge</div>
-        <div class="box">Refund if Creator Refuses Challenge</div>
-
-        <div class="footer">
-            You must be 18 years or older to enter.<br>
-            Coming Soon: Featured Creators directly on our site!
-        </div>
-    </div>
-
-    <!-- RIGHT COLUMN -->
-    <div class="right-column">
-        <!-- Hero image -->
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAaAAAAHgCAYAAABb0sH5AAAAAklEQVR4AewaftIAAABCSURBVO3BQY4AAAAwEMC+8y9bkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4G0gAAWgUAHsAAAAASUVORK5CYII=" alt="Hero Image">
-
-        <!-- Demo video box -->
-        <div class="demo-video">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAaAAAAHgCAYAAABb0sH5AAAAAklEQVR4AewaftIAAABCSURBVO3BQY4AAAAwEMC+8y9bkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4G0gAAWgUAHsAAAAASUVORK5CYII=" alt="Demo Video Image">
-            <span>Click here to watch short demo video</span>
-        </div>
-    </div>
-
-</div>
-</body>
-</html>
+    /* Controls sty*
