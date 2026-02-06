@@ -1,144 +1,382 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Truth or Dare for My Fans</title>
-  <link rel="stylesheet" href="css/styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Truth or Dare For My Fans</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #CC0000;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #CC0000;
+            border: 3px solid #D4A574;
+            padding: 40px;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 40px;
+            color: #4A4A4A;
+        }
+
+        .top-boxes {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .hero-box,
+        .video-box {
+            aspect-ratio: 1;
+            border: 2px solid #D4A574;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .video-box {
+            background: #E5E5E5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .video-placeholder {
+            text-align: center;
+            color: #4A4A4A;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .main-content {
+            border: 2px solid #D4A574;
+            padding: 30px;
+        }
+
+        .cards-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 20px;
+        }
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .card-image-wrapper {
+            width: 100%;
+            max-width: 280px;
+            position: relative;
+            margin-bottom: 15px;
+        }
+
+        .card-image {
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+        }
+
+        .badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+        }
+
+        .badge-blue {
+            background: #4A7CFF;
+            color: white;
+            padding: 6px 14px;
+            border-radius: 15px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .badge-gray {
+            background: #E5E5E5;
+            color: #4A4A4A;
+            padding: 6px 14px;
+            border-radius: 15px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .card-info {
+            background: #E5E5E5;
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+            max-width: 280px;
+        }
+
+        .price {
+            color: #4A4A4A;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .description {
+            color: #4A4A4A;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .input-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 25px 0;
+        }
+
+        .input-field {
+            background: #E5E5E5;
+            border: none;
+            border-radius: 25px;
+            padding: 18px 24px;
+            font-size: 14px;
+            text-align: center;
+            color: #4A4A4A;
+        }
+
+        .input-field::placeholder {
+            color: #4A4A4A;
+        }
+
+        .disclaimer {
+            background: #E5E5E5;
+            border-radius: 25px;
+            padding: 18px 30px;
+            text-align: center;
+            margin: 25px 0;
+        }
+
+        .disclaimer-text {
+            color: #4A4A4A;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 1.5;
+        }
+
+        .button-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 25px 0;
+        }
+
+        .btn {
+            background: #E5E5E5;
+            border: none;
+            border-radius: 25px;
+            padding: 18px 24px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-left {
+            color: #4A4A4A;
+        }
+
+        .btn-right {
+            color: #4A4A4A;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .info-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .info-card {
+            background: #E5E5E5;
+            border-radius: 25px;
+            padding: 18px 24px;
+            text-align: center;
+        }
+
+        .info-card-left {
+            color: #4A4A4A;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .info-card-right {
+            color: #4A4A4A;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 24px;
+                margin-bottom: 30px;
+            }
+
+            .top-boxes {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .main-content {
+                padding: 20px;
+            }
+
+            .cards-row,
+            .input-row,
+            .button-row,
+            .info-row {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .card-image-wrapper,
+            .card-info {
+                max-width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
+    <div class="container">
+        <h1>Truth or Dare For My Fans</h1>
 
-  <!-- Header -->
-  <header class="main-header">
-    <h1>Truth or Dare for My Fans</h1>
-  </header>
-
-  <!-- Page Split Vertically -->
-  <main class="page">
-
-    <!-- TOP ROW -->
-    <section class="row">
-
-      <!-- Hero Image -->
-      <div class="box square">
-        <p class="placeholder">Hero Image<br>(chat bubbles)</p>
-      </div>
-
-      <!-- Demo Video -->
-      <div class="box square">
-        <p class="placeholder">Short Video Demo<br>(play icon)</p>
-      </div>
-
-    </section>
-
-    <!-- ROW 1 -->
-    <section class="row">
-
-      <div class="box rectangle">
-        <p>
-          <strong>Truth $5.00</strong><br />
-          5 minute text session
-        </p>
-      </div>
-
-      <div class="box rectangle">
-        <p>
-          <strong>Dare $25.00</strong><br />
-          15 minute Live Video Session
-        </p>
-      </div>
-
-    </section>
-
-    <!-- ROW 2 -->
-    <section class="row">
-
-      <div class="box rectangle">
-        <p>Enter Creator’s handle or name with platform</p>
-      </div>
-
-      <div class="box rectangle">
-        <p>Enter Fan’s name or nickname</p>
-      </div>
-
-    </section>
-
-    <!-- ROW 3 -->
-    <section class="row single">
-
-      <div class="box rectangle wide">
-        <p>
-          Creator can accept or refuse Truth or Dare challenge.
-          If refused, fan will be credited.
-        </p>
-      </div>
-
-    </section>
-
-    <!-- PAYMENT -->
-    <section class="row single">
-
-      <div class="box rectangle wide">
-        <p><strong>Pay with Stripe</strong></p>
-      </div>
-
-    </section>
-
-    <!-- SESSION LABEL -->
-    <section class="row single">
-
-      <div class="box rectangle wide">
-        <p>Truth Session – 5 minutes</p>
-      </div>
-
-    </section>
-
-    <!-- BOTTOM SESSION BOXES -->
-    <section class="row">
-
-      <!-- Truth Session -->
-      <div class="box square session">
-        <div class="session-header">
-          <span>Truth Session</span>
-          <span class="timer">05:00</span>
+        <!-- Top Section with Hero Image and Demo Video -->
+        <div class="top-boxes">
+            <div class="hero-box">
+                <img src="hero-image.jpg" alt="Hero Image" class="hero-image">
+            </div>
+            <div class="video-box">
+                <div class="video-placeholder">
+                    <p>Short Demo Video</p>
+                    <p style="font-size: 14px; margin-top: 10px; opacity: 0.7;">(Video will be added here)</p>
+                </div>
+            </div>
         </div>
-        <p class="placeholder">Text chat area</p>
-      </div>
 
-      <!-- Dare Session -->
-      <div class="box square session">
-        <div class="session-header">
-          <span>Dare Session</span>
-          <span class="timer">15:00</span>
+        <div class="main-content">
+            <div class="cards-row">
+                <!-- Truth Card -->
+                <div class="card">
+                    <div class="card-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=600&fit=crop" alt="Truth" class="card-image">
+                    </div>
+                    <div class="card-info">
+                        <div class="price">Truth $5.00</div>
+                        <div class="description">5 minute session</div>
+                    </div>
+                </div>
+
+                <!-- Dare Card -->
+                <div class="card">
+                    <div class="card-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600&h=600&fit=crop" alt="Dare" class="card-image">
+                    </div>
+                    <div class="card-info">
+                        <div class="price">Dare $25.00</div>
+                        <div class="description">15 minute Live Stream</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Input Fields -->
+            <div class="input-row">
+                <input type="text" class="input-field" placeholder="Enter Creators Name or Handle from their fanpage" id="creatorName">
+                <input type="text" class="input-field" placeholder="Enter Fans Name or Nickname" id="fanName">
+            </div>
+
+            <!-- Disclaimer -->
+            <div class="disclaimer">
+                <p class="disclaimer-text">Creator Reservs the Right To accept or Refuse Challenge<br>
+                If challenge is refuse ,fan will get a credit</p>
+            </div>
+
+            <!-- Buttons -->
+            <div class="button-row">
+                <button class="btn btn-left" onclick="handlePayment()">Pay With Stripe</button>
+                <button class="btn btn-right" onclick="notifyCreator()">Creator Has Been Notified</button>
+            </div>
+
+            <!-- Info Cards -->
+            <div class="info-row">
+                <div class="info-card info-card-left">Truth 5 minute fun starts here</div>
+                <div class="info-card info-card-right">Dare 15 minute Live 1 way Video ,2 way text</div>
+            </div>
         </div>
-        <p class="placeholder">
-          Live video (1-way)<br />
-          2-way text chat
-        </p>
-      </div>
+    </div>
 
-    </section>
+    <script src="https://js.stripe.com/v3/"></script>
+    <script>
+        // Initialize Stripe (replace with your publishable key)
+        // const stripe = Stripe('your_publishable_key_here');
 
-    <!-- FEATURED CREATORS -->
-    <section class="row single">
+        function handlePayment() {
+            const creatorName = document.getElementById('creatorName').value;
+            const fanName = document.getElementById('fanName').value;
 
-      <div class="box rectangle wide">
-        <p>
-          <strong>Coming Soon – Featured Creators</strong><br />
-          Profile photos and short bios
-        </p>
-      </div>
+            if (!creatorName || !fanName) {
+                alert('Please fill in both the creator and fan names!');
+                return;
+            }
 
-    </section>
+            // In production, you would:
+            // 1. Create a payment intent on your backend
+            // 2. Use stripe.confirmCardPayment() to process payment
+            // 3. Handle success/error states
 
-  </main>
+            // For demo purposes:
+            alert('Payment processing initiated!');
+            console.log('Payment initiated for:', { creatorName, fanName });
+        }
 
-  <!-- DISCLAIMER -->
-  <footer class="disclaimer">
-    <p>
-      By participating you acknowledge being 18 years or older.
-      No violence, incest, or anything involving minors will be tolerated.
-    </p>
-  </footer>
+        function notifyCreator() {
+            const creatorName = document.getElementById('creatorName').value;
 
+            if (!creatorName) {
+                alert('Please enter the creator\'s name first!');
+                return;
+            }
+
+            // In production, this would trigger a notification to the creator
+            alert(`Creator ${creatorName} has been notified!`);
+            console.log('Notification sent to:', creatorName);
+        }
+    </script>
 </body>
 </html>
